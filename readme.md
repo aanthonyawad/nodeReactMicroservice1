@@ -44,9 +44,6 @@ more details : https://www.sonarqube.org/
 mvn sonar:sonar -Dsonar.projectKey=de.iplytics.codingchallenge_backend_webapp -Dsonar.host.url=http://localhost:9000 -Dsonar.login=54db2a4cf71d61a01d01a61fa108c571946a70a6
 ```
 
-## Swagger documentaion under
-http://localhost:8080/swagger-ui.html
-
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
