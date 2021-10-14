@@ -12,7 +12,9 @@ app.use(cors());
 
 const postData = {}
 
-app.get('posts/comments',(req,res,next)=>{res.end()})
+app.get('/posts',(req,res,next)=>{
+    res.send(postData);
+})
 
 
 
@@ -21,10 +23,20 @@ app.post('/events',(req,res,next)=>{
     const {name , data} = req.body;
     if(name)
         if(name === 'postCreated'){
-            console.log(data);
+            postData[data.id] = {
+                postId: data.id,
+                postTitle:data.title,
+                comments: []
+            }
+            console.log(postData);
         }
         else if(name === 'commentCreated'){
             console.log(data);
+            if(postData[data.postId])
+            {
+               postData[data.postId].comments = data.comments; 
+            }
+            console.log(postData);
         }
     res.send({});
 })

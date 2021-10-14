@@ -23,6 +23,7 @@ app.post('/posts',async  (req,res,next)=>{
         id,
         title
     }
+    
     const event = {
         name : 'postCreated',
         data : posts[id]

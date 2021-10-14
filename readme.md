@@ -41,7 +41,7 @@ to run the app run:
 please note that you need to have sonarQube installed on your machine
 more details : https://www.sonarqube.org/
 ```bash
-mvn sonar:sonar -Dsonar.projectKey=de.iplytics.codingchallenge_backend_webapp -Dsonar.host.url=http://localhost:9000 -Dsonar.login=54db2a4cf71d61a01d01a61fa108c571946a70a6
+
 ```
 
 
