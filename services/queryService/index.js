@@ -16,12 +16,8 @@ app.get('/posts',(req,res,next)=>{
     res.send(postData);
 })
 
-
-
-app.post('/events',(req,res,next)=>{
-    console.log('recieved event');
-    const {name , data} = req.body;
-    if(name)
+const handleEvents = (name,data)=>{
+     if(name)
         if(name === 'postCreated'){
             postData[data.id] = {
                 postId: data.id,
@@ -38,9 +34,19 @@ app.post('/events',(req,res,next)=>{
             }
             console.log(postData);
         }
+}
+
+app.post('/events',(req,res,next)=>{
+    console.log('recieved event');
+    const {name , data} = req.body;
+    handleEvents(name,data);
     res.send({});
 })
 
-app.listen(4002,()=>{
+app.listen(4002,async ()=>{
     console.log('listening on 4002');
+    const res = axios.get('http://localhost:5000/events');
+    for(let result of res.data){
+        handleEvents(result.name,result.data);
+    } 
 });

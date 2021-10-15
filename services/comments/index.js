@@ -54,7 +54,12 @@ app.post('/posts/:postId/comments',async (req,res,next)=>{
 });
 
 app.post('/events',(req,res,next)=>{
-    res.send({});})
+    const {name , data } = req.body;
+    if(name ==='commentModerated'){
+        console.log(data);
+    }
+    res.send({});
+})
 
 app.listen(4001,()=>{
     console.log('listening on 4001');
