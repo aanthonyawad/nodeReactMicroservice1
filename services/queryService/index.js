@@ -46,6 +46,7 @@ app.post('/events',(req,res,next)=>{
 app.listen(4002,async ()=>{
     console.log('listening on 4002');
     const res = axios.get('http://localhost:5000/events');
+    if(res.data)
     for(let result of res.data){
         handleEvents(result.name,result.data);
     } 
