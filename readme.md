@@ -3,6 +3,7 @@ This project serves as blog example to demonstrate miscroservices architecture a
 
 ## Overview
 - Our software dives into the usage of the event bus structure to decouple microservices.
+- our software in the frontend uses the context provider API to send and recieve data.
 - It uses NodeJs as backend architechture with express framework
 - It uses ReactJs as the Frontend 
 
